@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:12:05 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/19 14:59:08 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/19 15:59:57 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ std::string Contact::add_contact(std::string input)
 	std::string info;
 	flag = 0;
 	std::cout << input;
+	std::cin.ignore();
 	std::getline(std::cin, info);
 	if (std::cin.good() && info.empty() == false)
 		flag = 1;
@@ -47,8 +48,7 @@ std::string Contact::add_contact(std::string input)
 	}
 	if (flag == 1)
 		add_contact(input);
-	else
-		return (info);
+	return (info);
 }
 
 void Contact::print_contact(int index)
@@ -68,4 +68,17 @@ std::string Contact::resize_contact(std::string info)
 	if (info.length() > 10)
 		info.resize(10, '.');
 	return (info);
+}
+
+void Contact::display_contact(int index)
+{
+	if (this->m_firstName.empty() || this->m_lastName.empty()
+		|| this->m_nickname.empty() || this->m_phoneNumber.empty()
+		|| this->m_darkestSecret.empty())
+		return ;
+	std::cout << m_firstName << std::endl;
+	std::cout << m_lastName << std::endl;
+	std::cout << m_nickname << std::endl;
+	std::cout << m_phoneNumber << std::endl;
+	std::cout << m_darkestSecret << std::endl;
 }
