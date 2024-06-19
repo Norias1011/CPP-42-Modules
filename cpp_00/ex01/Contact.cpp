@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:12:05 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/19 15:59:57 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:14:15 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Contact::~Contact()
 
 void Contact::new_contact(int i)
 {
+	std::cin.ignore();
 	this->m_firstName = this->add_contact("First name :");
 	this->m_lastName = this->add_contact("Last Name : ");
 	this->m_nickname = this->add_contact("Nickname : ");
@@ -36,8 +37,7 @@ std::string Contact::add_contact(std::string input)
 
 	std::string info;
 	flag = 0;
-	std::cout << input;
-	std::cin.ignore();
+	std::cout << input << std::flush;
 	std::getline(std::cin, info);
 	if (std::cin.good() && info.empty() == false)
 		flag = 1;

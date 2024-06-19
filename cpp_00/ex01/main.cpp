@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:11:32 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/19 15:42:17 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:11:28 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(void)
 		std::string command;
 		std::cout << "Enter a command (ADD, SEARCH or EXIT) :";
 		std::cin >> command;
-		std::cin.ignore();
 		if (command == "ADD")
 			phonebook.add();
 		else if (command == "SEARCH")
