@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:05:54 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/19 15:33:31 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:32:52 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Contact
 	void new_contact(int i);
 	std::string add_contact(std::string input);
 	void print_contact(int index);
-	std::string resize_contact(std::string info);
+	std::string resize_contact(std::string &info);
 	void display_contact(int index);
 
   private:
