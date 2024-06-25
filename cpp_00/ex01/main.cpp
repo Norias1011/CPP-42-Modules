@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:11:32 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/24 15:12:05 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:30:44 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	main(void)
 {
 	Phonebook	phonebook;
-	std::string command;
 
+	std::string command;
 	std::cout << "Welcome to the Phonebook" << std::endl;
 	while (1)
 	{

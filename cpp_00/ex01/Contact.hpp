@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:05:54 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/24 14:32:52 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:42:39 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iomanip>
 # include <iostream>
+# include <limits>
 # include <string>
 
 class Contact

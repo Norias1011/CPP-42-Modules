@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:06:16 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/24 15:09:50 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:57:39 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Contact::~Contact()
 
 void Contact::new_contact(int i)
 {
-	std::cin.ignore();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	this->m_firstName = this->add_contact("First name :");
 	this->m_lastName = this->add_contact("Last Name : ");
 	this->m_nickname = this->add_contact("Nickname : ");
@@ -37,17 +37,18 @@ std::string Contact::add_contact(std::string input)
 
 	std::string info;
 	flag = 1;
-	std::cout << input << std::flush;
-	std::getline(std::cin, info);
-	if (std::cin.good() && info.empty() == false)
-		flag = 0;
-	else
+	do
 	{
-		std::cin.clear();
-		std::cout << "Invalid Input" << std::endl;
-	}
-	if (flag == 1)
-		add_contact(input);
+		std::cout << input << std::flush;
+		std::getline(std::cin, info);
+		if (std::cin.good() && info.empty() == false)
+			flag = 0;
+		else
+		{
+			std::cin.clear();
+			std::cout << "Invalid Input" << std::endl;
+		}
+	} while (flag == 1);
 	return (info);
 }
 
@@ -63,21 +64,20 @@ void Contact::print_contact(int index)
 	std::cout << "|" << std::endl;
 }
 
-std::string Contact::resize_contact(std::string& info)
+std::string Contact::resize_contact(std::string &info)
 {
 	if (info.length() > 10)
-    {
-        info.resize(9);
+	{
+		info.resize(9);
 		info.resize(10, '.');
-    }
+	}
 	return (info);
 }
 
 void Contact::display_contact(int index)
 {
 	if (this->m_firstName.empty() || this->m_lastName.empty()
-		|| this->m_nickname.empty() || this->m_phoneNumber.empty()
-		|| this->m_darkestSecret.empty())
+		|| this->m_nickname.empty())
 		return ;
 	std::cout << "Firstname : " << m_firstName << std::endl;
 	std::cout << "Lastname : " << m_lastName << std::endl;

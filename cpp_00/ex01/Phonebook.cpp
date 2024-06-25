@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:12:57 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/24 14:23:11 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/25 16:56:24 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,18 @@ int Phonebook::get_index(void)
 
 	index = -1;
 	flag = 0;
-	std::cout << "Enter the contact index : ";
-	std::cin >> index;
-	std::cin.ignore();
-	if (std::cin.good() && (index >= 0 && index < 8))
-		flag = 1;
-	else
+	do
 	{
-		std::cin.clear();
-		std::cout << "Wrong index, between 0 to 7 : " << std::endl;
-	}
-	if (flag == 0)
-		get_index();
+		std::cout << "Enter the contact index : ";
+		std::cin >> index;
+		std::cin.ignore();
+		if (std::cin.good() && (index >= 0 && index < 8))
+			flag = 1;
+		else
+		{
+			std::cin.clear();
+			std::cout << "Wrong index, between 0 to 7 : " << std::endl;
+		}
+	} while (flag == 0);
 	return (index);
 }
