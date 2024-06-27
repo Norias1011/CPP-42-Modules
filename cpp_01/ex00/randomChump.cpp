@@ -6,6 +6,12 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:47:18 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/27 13:47:19 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/27 13:59:29 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Zombie.hpp"
+
+void	randomChump(std::string name)
+{
+}

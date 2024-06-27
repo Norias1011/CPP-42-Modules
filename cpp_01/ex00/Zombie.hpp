@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:48:02 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/27 13:55:54 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/06/27 14:07:57 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ class Zombie
   private:
 	std::string _name;
 };
+
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif
