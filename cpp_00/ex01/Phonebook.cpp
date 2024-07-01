@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 00:12:57 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/25 16:56:24 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/01 12:38:22 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Phonebook::search(void)
 	this->mp_contacts[index].display_contact(index);
 }
 
-int Phonebook::get_index(void)
+int Phonebook::get_index(void) const
 {
 	int	index;
 	int	flag;

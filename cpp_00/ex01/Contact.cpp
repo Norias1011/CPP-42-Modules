@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:06:16 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/25 16:57:39 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/01 12:37:03 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void Contact::new_contact(int i)
 	std::cout << std::endl;
 }
 
-std::string Contact::add_contact(std::string input)
+std::string Contact::add_contact(std::string input) const
 {
 	int	flag;
 
@@ -64,7 +64,7 @@ void Contact::print_contact(int index)
 	std::cout << "|" << std::endl;
 }
 
-std::string Contact::resize_contact(std::string &info)
+std::string Contact::resize_contact(std::string &info) const 
 {
 	if (info.length() > 10)
 	{
@@ -74,7 +74,7 @@ std::string Contact::resize_contact(std::string &info)
 	return (info);
 }
 
-void Contact::display_contact(int index)
+void Contact::display_contact(int index) const
 {
 	if (this->m_firstName.empty() || this->m_lastName.empty()
 		|| this->m_nickname.empty())

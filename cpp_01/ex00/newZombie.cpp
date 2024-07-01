@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:46:56 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/06/27 13:58:00 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/01 14:32:50 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,5 @@
 
 Zombie	*newZombie(std::string name)
 {
+    return (new Zombie(name));
 }
