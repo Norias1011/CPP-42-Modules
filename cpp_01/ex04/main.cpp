@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:06:04 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/02 11:13:38 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:24:38 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,16 @@ int	main(int ac, char **av)
 		{
 			if (write_file.is_open())
 			{
-				position = line.find(av2);
-				if (position != std::string::npos)
+				while (line.find(av2) != std::string::npos)
 				{
-					line.erase(position, av2size);
-					line.insert(position, av3);
-					buff.append(line);
+					position = line.find(av2);
+					if (position != std::string::npos)
+					{
+						line.erase(position, av2size);
+						line.insert(position, av3);
+					}
 				}
+				buff.append(line);
 			}
 		}
 	}
