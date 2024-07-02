@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:28:56 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/02 11:41:49 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:38:59 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ Harl::~Harl()
 
 void Harl::complain(std::string level)
 {
+    void (Harl::*functions[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string client_words[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (client_words[i] == level)
+        {
+            (this->*functions[i])();
+            exit (0);
+        }
+    }
+    std::cout << "Sorry Sir, i don't understand what you are saying" << std::endl;
 }
 
 void Harl::debug(void)

@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:06:04 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/02 11:24:38 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:22:39 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int ac, char **av)
 					}
 				}
 				buff.append(line);
+				buff += "\n";
 			}
 		}
 	}
