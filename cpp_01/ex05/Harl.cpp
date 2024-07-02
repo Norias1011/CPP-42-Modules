@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:28:56 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/02 14:38:59 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:44:37 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void Harl::complain(std::string level)
         if (client_words[i] == level)
         {
             (this->*functions[i])();
-            exit (0);
+            exit(0);
         }
     }
     std::cout << "Sorry Sir, i don't understand what you are saying" << std::endl;
