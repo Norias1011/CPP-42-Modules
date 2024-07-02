@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:06:16 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/01 12:37:03 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:58:03 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Contact::~Contact()
 
 void Contact::new_contact(int i)
 {
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::cin.clear(); //ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	this->m_firstName = this->add_contact("First name :");
 	this->m_lastName = this->add_contact("Last Name : ");
 	this->m_nickname = this->add_contact("Nickname : ");
@@ -41,6 +41,11 @@ std::string Contact::add_contact(std::string input) const
 	{
 		std::cout << input << std::flush;
 		std::getline(std::cin, info);
+		if (std::cin.eof() == true)
+		{
+			std::cout << "Exiting Phonebook" << std::endl;
+			std::exit(0);
+		}
 		if (std::cin.good() && info.empty() == false)
 			flag = 0;
 		else
