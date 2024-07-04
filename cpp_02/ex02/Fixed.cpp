@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:04:58 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/04 15:19:02 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:31:41 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,100 @@ std::ostream &operator<<( std::ostream &o,Fixed const &value)
 {
     o << value.toFloat();
     return o;
+}
+
+Fixed Fixed::operator+(Fixed const &rhs) const
+{
+    return Fixed(this->_value + rhs._value);
+}
+
+Fixed Fixed::operator-(Fixed const &rhs) const
+{
+    return Fixed(this->_value - rhs._value);
+}
+
+Fixed Fixed::operator*(Fixed const &rhs) const
+{
+    return Fixed(this->toFloat() * rhs.toFloat());
+}
+
+Fixed Fixed::operator/(Fixed const &rhs) const
+{
+    return Fixed(this->toFloat() / rhs.toFloat());
+}
+
+Fixed Fixed::operator++()
+{
+    ++this->_value;
+    return *this;
+}
+
+Fixed Fixed::operator--()
+{
+    --this->_value;
+    return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    ++this->_value;
+    return tmp;
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+    --this->_value;
+    return tmp;
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+    return a < b ? a : b;
+}
+
+Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+{
+    return a < b ? a : b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+    return a > b ? a : b;
+}
+
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
+{
+    return a > b ? a : b;
+}
+
+bool Fixed::operator>(Fixed const &rhs) const
+{
+    return this->_value > rhs._value;
+}
+
+bool Fixed::operator<(Fixed const &rhs) const
+{
+    return this->_value < rhs._value;
+}
+
+bool Fixed::operator>=(Fixed const &rhs) const
+{
+    return this->_value >= rhs._value;
+}
+
+bool Fixed::operator<=(Fixed const &rhs) const
+{
+    return this->_value <= rhs._value;
+}
+
+bool Fixed::operator!=(Fixed const &rhs) const
+{
+    return this->_value != rhs._value;
+}
+
+bool Fixed::operator==(Fixed const &rhs) const
+{
+    return this->_value == rhs._value;
 }
