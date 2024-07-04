@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:04:55 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/04 15:05:37 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:09:51 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ class Fixed{
 };
 
 std::ostream &operator<<(std::ostream &o, Fixed const &value);
-
 
 #endif
