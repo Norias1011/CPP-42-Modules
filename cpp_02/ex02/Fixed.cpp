@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:04:58 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/04 16:31:41 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/04 18:01:39 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 const int Fixed::_bit_value = 8;
 
-Fixed::Fixed()
+Fixed::Fixed(): _value(0)
 {
     //std::cout << "Default constructor called" << std::endl;
 }
@@ -79,24 +79,24 @@ std::ostream &operator<<( std::ostream &o,Fixed const &value)
     return o;
 }
 
-Fixed Fixed::operator+(Fixed const &rhs) const
+float Fixed::operator+(Fixed rhs) const
 {
-    return Fixed(this->_value + rhs._value);
+    return (this->toFloat() + rhs.toFloat());
 }
 
-Fixed Fixed::operator-(Fixed const &rhs) const
+float Fixed::operator-(Fixed rhs) const
 {
-    return Fixed(this->_value - rhs._value);
+    return (this->toFloat() - rhs.toFloat());
 }
 
-Fixed Fixed::operator*(Fixed const &rhs) const
+float Fixed::operator*(Fixed rhs) const
 {
-    return Fixed(this->toFloat() * rhs.toFloat());
+    return (this->toFloat() * rhs.toFloat());
 }
 
-Fixed Fixed::operator/(Fixed const &rhs) const
+float Fixed::operator/(Fixed rhs) const
 {
-    return Fixed(this->toFloat() / rhs.toFloat());
+    return (this->toFloat() / rhs.toFloat());
 }
 
 Fixed Fixed::operator++()
@@ -127,50 +127,50 @@ Fixed Fixed::operator--(int)
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-    return a < b ? a : b;
+    return a.toFloat() <= b.toFloat() ? a : b;
 }
 
 Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
 {
-    return a < b ? a : b;
+    return a.toFloat() <= b.toFloat() ? a : b;
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-    return a > b ? a : b;
+    return a.toFloat() >= b.toFloat() ? a : b;
 }
 
 Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
 {
-    return a > b ? a : b;
+    return a.toFloat() >= b.toFloat() ? a : b;
 }
 
-bool Fixed::operator>(Fixed const &rhs) const
+bool Fixed::operator>(Fixed rhs) const
 {
-    return this->_value > rhs._value;
+    return this->toFloat() > rhs.toFloat();
 }
 
-bool Fixed::operator<(Fixed const &rhs) const
+bool Fixed::operator<(Fixed rhs) const
 {
-    return this->_value < rhs._value;
+    return this->toFloat() < rhs.toFloat();
 }
 
-bool Fixed::operator>=(Fixed const &rhs) const
+bool Fixed::operator>=(Fixed rhs) const
 {
-    return this->_value >= rhs._value;
+    return this->toFloat() >= rhs.toFloat();
 }
 
-bool Fixed::operator<=(Fixed const &rhs) const
+bool Fixed::operator<=(Fixed rhs) const
 {
-    return this->_value <= rhs._value;
+    return this->toFloat() <= rhs.toFloat();
 }
 
-bool Fixed::operator!=(Fixed const &rhs) const
+bool Fixed::operator!=(Fixed rhs) const
 {
-    return this->_value != rhs._value;
+    return this->toFloat() != rhs.toFloat();
 }
 
-bool Fixed::operator==(Fixed const &rhs) const
+bool Fixed::operator==(Fixed rhs) const
 {
-    return this->_value == rhs._value;
+    return this->toFloat() == rhs.toFloat();
 }
