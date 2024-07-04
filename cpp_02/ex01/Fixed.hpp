@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:38:18 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/04 14:06:12 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/04 14:48:26 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Fixed{
         static const int _bit_value;
 };
 
-std::ostream &operator<<(std::ostream &out, Fixed const &value);
+std::ostream &operator<<(std::ostream &o, Fixed const &value);
 
 
 #endif

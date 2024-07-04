@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:39:25 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/04 14:08:00 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/04 14:59:37 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ Fixed::Fixed(Fixed const & src)
 
 Fixed::~Fixed()
 {
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed & Fixed::operator=( Fixed const & rhs)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy Assignation operator called" << std::endl;
     if (this != &rhs)
         this->_value = rhs.getRawBits();
     return *this;
@@ -51,7 +52,7 @@ Fixed & Fixed::operator=( Fixed const & rhs)
 
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    //std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
@@ -62,10 +63,16 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-    
+    return (float)this->_value / (float)(1 << Fixed::_bit_value);
 }
 
 int Fixed::toInt(void) const
 {
     return this->_value >> Fixed::_bit_value;
+}
+
+std::ostream &operator<<( std::ostream &o,Fixed const &value)
+{
+    o << value.toFloat();
+    return o;
 }
