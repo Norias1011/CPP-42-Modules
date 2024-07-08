@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:32 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 14:01:42 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:33:40 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 int main( void )
 {
-    Point a( Fixed(4), Fixed(4) );
-    Point b( Fixed(8), Fixed(4) );
-    Point c( Fixed(4), Fixed(8) );
-    Point point( Fixed(6), Fixed(6 ) );
+    Point a( -80, -80 );
+    Point b( -80, -80 );
+    Point c( -80, -80 );
+    Point point( 80, 80 );
 
     std::cout << "Point a: x " << a.getX() << " y " << a.getY() << std::endl;
     std::cout << "Point b: x " << b.getX() << " y " << b.getY() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:42 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 13:59:57 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:28:50 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-    float x = point.getX().getRawBits();
-    float y = point.getY().getRawBits();
-    float x1 = a.getX().getRawBits();
-    float y1 = a.getY().getRawBits();
-    float x2 = b.getX().getRawBits();
-    float y2 = b.getY().getRawBits();
-    float x3 = c.getX().getRawBits();
-    float y3 = c.getY().getRawBits();
+    float x = point.getX().toFloat();
+    float y = point.getY().toFloat();
+    float x1 = a.getX().toFloat();
+    float y1 = a.getY().toFloat();
+    float x2 = b.getX().toFloat();
+    float y2 = b.getY().toFloat();
+    float x3 = c.getX().toFloat();
+    float y3 = c.getY().toFloat();
 
     float d1 = (x - x1) * (y2 - y1) - (x2 - x1) * (y - y1);
     float d2 = (x - x2) * (y3 - y2) - (x3 - x2) * (y - y2);

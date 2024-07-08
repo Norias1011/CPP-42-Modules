@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:25 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 13:47:38 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:25:10 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Point::Point() : _x(0), _y(0)
     return ;
 }
 
-Point::Point( Fixed const x, Fixed const y ) : _x(x), _y(y)
+Point::Point( float const x, float const y ) : _x(x), _y(y)
 {
     return;
 }

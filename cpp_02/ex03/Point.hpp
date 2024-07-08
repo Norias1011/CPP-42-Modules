@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:20 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 13:47:59 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:25:11 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Point
 {
     public:
         Point();
-        Point( Fixed const x, Fixed const y );
+        Point( float const x, float const y );
         Point( Point const & src );
         ~Point( void );
 
