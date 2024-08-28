@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:36 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 13:14:57 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:26:47 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ class Fixed{
         Fixed(Fixed const & src);
         ~Fixed();
         Fixed & operator=( Fixed const & rhs);
-        float operator+(Fixed rhs) const;
-        float operator-(Fixed rhs) const;
-        float operator*(Fixed rhs) const;
-        float operator/(Fixed rhs) const;
-        bool operator>(Fixed rhs) const;
-        bool operator<(Fixed rhs) const;
-        bool operator>=(Fixed rhs) const;
-        bool operator<=(Fixed rhs) const;
-        bool operator==(Fixed rhs) const;
-        bool operator!=(Fixed rhs) const;
+        float operator+(Fixed const &rhs) const;
+        float operator-(Fixed const &rhs) const;
+        float operator*(Fixed const &rhs) const;
+        float operator/(Fixed const &rhs) const;
+        bool operator>(Fixed const &rhs) const;
+        bool operator<(Fixed const &rhs) const;
+        bool operator>=(Fixed const &rhs) const;
+        bool operator<=(Fixed const &rhs) const;
+        bool operator==(Fixed const &rhs) const;
+        bool operator!=(Fixed const &rhs) const;
         int getRawBits(void) const;
         void setRawBits(int const raw);
         float toFloat(void) const;

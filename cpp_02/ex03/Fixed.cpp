@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 13:14:39 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/07 13:15:23 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:27:53 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,22 +77,22 @@ std::ostream &operator<<( std::ostream &o,Fixed const &value)
     return o;
 }
 
-float Fixed::operator+(Fixed rhs) const
+float Fixed::operator+(Fixed const &rhs) const
 {
     return (this->toFloat() + rhs.toFloat());
 }
 
-float Fixed::operator-(Fixed rhs) const
+float Fixed::operator-(Fixed const &rhs) const
 {
     return (this->toFloat() - rhs.toFloat());
 }
 
-float Fixed::operator*(Fixed rhs) const
+float Fixed::operator*(Fixed const &rhs) const
 {
     return (this->toFloat() * rhs.toFloat());
 }
 
-float Fixed::operator/(Fixed rhs) const
+float Fixed::operator/(Fixed const &rhs) const
 {
     return (this->toFloat() / rhs.toFloat());
 }
@@ -143,32 +143,32 @@ Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
     return a.toFloat() >= b.toFloat() ? a : b;
 }
 
-bool Fixed::operator>(Fixed rhs) const
+bool Fixed::operator>(Fixed const &rhs) const
 {
     return this->toFloat() > rhs.toFloat();
 }
 
-bool Fixed::operator<(Fixed rhs) const
+bool Fixed::operator<(Fixed const &rhs) const
 {
     return this->toFloat() < rhs.toFloat();
 }
 
-bool Fixed::operator>=(Fixed rhs) const
+bool Fixed::operator>=(Fixed const &rhs) const
 {
     return this->toFloat() >= rhs.toFloat();
 }
 
-bool Fixed::operator<=(Fixed rhs) const
+bool Fixed::operator<=(Fixed const &rhs) const
 {
     return this->toFloat() <= rhs.toFloat();
 }
 
-bool Fixed::operator!=(Fixed rhs) const
+bool Fixed::operator!=(Fixed const &rhs) const
 {
     return this->toFloat() != rhs.toFloat();
 }
 
-bool Fixed::operator==(Fixed rhs) const
+bool Fixed::operator==(Fixed const &rhs) const
 {
     return this->toFloat() == rhs.toFloat();
 }
