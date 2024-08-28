@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 		$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-    $(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJS)
