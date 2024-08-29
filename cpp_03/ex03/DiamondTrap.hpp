@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:17:14 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/08/29 18:20:47 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:22:47 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class DiamondTrap
 {
     public:
-
+        void whoAmI();
     private:
 };
 
