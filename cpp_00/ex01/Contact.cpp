@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:06:16 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/07/02 13:58:03 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:04:20 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ std::string Contact::resize_contact(std::string &info) const
 
 void Contact::display_contact(int index) const
 {
+	(void)index;
 	if (this->m_firstName.empty() || this->m_lastName.empty()
 		|| this->m_nickname.empty())
 		return ;
