@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 14:14:54 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/08/29 17:28:22 by akinzeli         ###   ########.fr       */
+/*   Created: 2024/08/29 17:13:43 by akinzeli          #+#    #+#             */
+/*   Updated: 2024/08/29 17:32:15 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() :  _name("New Name"), _hitpoints(100), _energy_points(50), _attack_damage(20)
+ClapTrap::ClapTrap() :  _name("New Name"), _hitpoints(100), _energy_points(100), _attack_damage(30)
 {
     std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(100), _energy_points(50), _attack_damage(20)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(100), _energy_points(100), _attack_damage(30)
 {
     std::cout << "ClapTrap Name constructor called" << std::endl;
 }
@@ -102,4 +102,3 @@ void ClapTrap::beRepaired(unsigned int amount)
     else
         std::cout << "ClapTrap" << " " << this->_name << " is out of energy or hit points!" << std::endl;
 }
-
