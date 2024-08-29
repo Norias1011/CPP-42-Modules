@@ -4,19 +4,16 @@ SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = g++
+CXX = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
