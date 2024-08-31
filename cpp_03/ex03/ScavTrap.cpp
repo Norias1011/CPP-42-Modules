@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:13:36 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/08/29 17:03:38 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/08/31 18:27:55 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void ScavTrap::guardGate()
     std::cout << "I'am in Gate keeper mode" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 {
     *this = src;
     std::cout << "Scavtrap copy constructor called" << std::endl;
