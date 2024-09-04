@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:43:06 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 13:43:53 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:13:44 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal()
 {
     _type = "Animal";
+    std::cout << "Animal Constructor called" << std::endl;
 }
 
 Animal::~Animal()

@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:44:44 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 13:58:16 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:12:06 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat()
 {
     _type = "Cat";
+    std::cout << "Cat Constructor called" << std::endl;
 }
 
 Cat::~Cat()

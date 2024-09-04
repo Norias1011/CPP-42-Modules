@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:43:58 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 13:58:17 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:11:57 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog()
 {
     _type = "Dog";
+    std::cout << "Dog Constructor called" << std::endl;
 }
 
 Dog::~Dog()

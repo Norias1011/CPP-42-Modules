@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:16 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 14:04:39 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:13:58 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 WrongCat::WrongCat()
 {
     _type = "WrongCat";
+    std::cout << "WrongCat Constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat()

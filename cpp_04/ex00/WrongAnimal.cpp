@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:01:19 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 14:01:51 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:14:00 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 WrongAnimal::WrongAnimal()
 {
     _type = "WrongAnimal";
+    std::cout << "WrongAnimal Constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
