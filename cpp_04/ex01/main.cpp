@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:18:48 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/04 14:51:47 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:40:35 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,4 @@ int main()
 	delete(b);
 
 	return (0);
-    /*const Animal* j = new Dog();
-    const Animal* i = new Cat();
-
-    
-    return 0;*/
 }
