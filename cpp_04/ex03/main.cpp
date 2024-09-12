@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:17:26 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/06 01:30:02 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:24:07 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main()
 	AMateria	*tmp1;
 	AMateria	*tmp2;
 	AMateria	*tmp3;
+
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -76,7 +77,7 @@ int main()
 	std::cout << "DEEP COPY VS SOURCE:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
 	charles->unequip(0); // this shows that they have different materia pointers equipped
-	charles_copy->unequip(1); //this will produce a leak if we don't store the address somewhere else before
+	//charles_copy->unequip(1); //this will produce a leak if we don't store the address somewhere else before
 	tmp = src->createMateria("cure");
 	charles_copy->equip(tmp);
 	tmp = src->createMateria("ice");

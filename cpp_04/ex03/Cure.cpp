@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:02:38 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/06 01:10:07 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:14:22 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cure::Cure() : AMateria("cure")
 {
+    this->_type = "cure";
     std::cout << "Cure constructor called" << std::endl;
 }
 

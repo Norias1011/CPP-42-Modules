@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:28:59 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/06 00:59:41 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:19:01 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class Ice : public AMateria
         Ice* clone() const;
         void use(ICharacter& target);
         std::string const & getType() const;
-    private:
-        std::string _type;
 };
 
 #endif

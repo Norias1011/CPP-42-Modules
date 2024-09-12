@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:21:17 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/06 00:55:55 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:02:00 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,14 @@
 Character::Character(std::string name) : _name(name)
 {
     for (int i = 0; i < 4; i++)
-        _materias[i] = NULL;
+        _materias[i] = 0;
+    std::cout << "Character constructor called" << std::endl;
+}
+
+Character::Character()
+{
+    for (int i = 0; i < 4; i++)
+        _materias[i] = 0;
     std::cout << "Character constructor called" << std::endl;
 }
 
@@ -23,7 +30,7 @@ Character::~Character()
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_materias[i] != NULL)
+        if (_materias[i] != 0)
             delete _materias[i];
     }
     std::cout << "Character destructor called" << std::endl;
@@ -33,8 +40,10 @@ Character::Character( Character const & src )
 {
     for (int i = 0; i < 4; i++)
     {
-        if (src._materias[i] != NULL)
+        if (src._materias[i] != 0)
             _materias[i] = src._materias[i]->clone();
+        else
+            _materias[i] = 0;
     }
     std::cout << "Character copy constructor called" << std::endl;
 }
@@ -45,9 +54,9 @@ Character & Character::operator=( Character const & rhs )
     {
         for (int i = 0; i < 4; i++)
         {
-            if (_materias[i] != NULL)
+            if (_materias[i] != 0)
                 delete _materias[i];
-            if (rhs._materias[i] != NULL)
+            if (rhs._materias[i] != 0)
                 _materias[i] = rhs._materias[i]->clone();
         }
     }
@@ -63,11 +72,15 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+    if (!m)
+    {
+        std::cout << "Can't equip nothing" << std::endl;
+    }
     for (int i = 0; i < 4; i++)
     {
-        if (_materias[i] == NULL)
+        if (this->_materias[i] == 0)
         {
-            _materias[i] = m;
+            this->_materias[i] = m;
             break;
         }
     }
@@ -76,12 +89,13 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4)
-        _materias[idx] = NULL;
+        _materias[idx] = 0;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-    if (idx >= 0 && idx < 4 && _materias[idx] != NULL)
+    std::cout << "I'm in use" << std::endl;
+    if (idx >= 0 && idx < 4 && _materias[idx] != 0)
         _materias[idx]->use(target);
 }
 
