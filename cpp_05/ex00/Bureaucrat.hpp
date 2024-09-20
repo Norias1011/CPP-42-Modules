@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 18:03:00 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/06 18:13:04 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:56:19 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,31 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
-        std::ostream &operator<<(std::ostream & flux, Bureaucrat const & src);
-        void print_object(std::ostream & flux) const;
+
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw()
+                {
+                    return "Grade is too high";
+                }
+        };
+
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw()
+                {
+                    return "Grade is too low";
+                }
+        };
     protected:
 
     private:
         std::string const _name;
         int _grade;
 };
+
+std::ostream &operator<<(std::ostream & flux, Bureaucrat const & src);
 
 #endif
