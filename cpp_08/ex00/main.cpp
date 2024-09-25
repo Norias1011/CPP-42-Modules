@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:33:12 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/24 16:36:36 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/25 10:16:15 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		main(void)
 {
     std::vector<int>	v;
+    std::vector<int>::iterator	it;
     v.push_back(1);
     v.push_back(2);
     v.push_back(3);
@@ -28,8 +29,10 @@ int		main(void)
 
     try
     {
-        std::cout << easyfind(v, 5) << std::endl;
-        std::cout << easyfind(v, 42) << std::endl;
+        it = easyfind(v, 5);
+        std::cout << *it << std::endl;
+        it = easyfind(v, 42);
+        std::cout << *it << std::endl;
     }
     catch (std::exception &e)
     {
