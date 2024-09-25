@@ -6,16 +6,19 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:33:12 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/25 10:16:15 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:58:16 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+#include <iterator>
+#include <iostream>
 
 int		main(void)
 {
     std::vector<int>	v;
-    std::vector<int>::iterator	it;
+    std::vector<int>::iterator it;
+    //std::ostream_iterator<int>  ite(std::cout);
     v.push_back(1);
     v.push_back(2);
     v.push_back(3);
