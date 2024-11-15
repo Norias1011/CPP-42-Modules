@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:03:31 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/27 16:51:37 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:30:42 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ void RPN::push_to_stack(char value)
 
 void RPN::calculate()
 {
+    if (this->_expression.empty())
+    {
+        std::cout << "Empty expression : fill it with some calculation" << std::endl;
+        return ;
+    }
     std::string operators = "+-*/";
     try {
         for(size_t i = 0; i < this->_expression.length(); i++)
