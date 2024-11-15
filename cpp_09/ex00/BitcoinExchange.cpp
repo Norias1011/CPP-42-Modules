@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 12:00:30 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/26 16:59:45 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/11/15 15:25:11 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ BitcoinExchange::BitcoinExchange()
         _exchange[date] = atof(price.c_str());
     }
     file.close();
+    /*std::map<std::string, double>::iterator it = _exchange.begin();
+    while (it != _exchange.end())
+    {
+        std::cout << it->first << " : " << it->second << std::endl;
+        it++;
+    }*/
 }
 
 BitcoinExchange::~BitcoinExchange()
@@ -109,8 +115,8 @@ void BitcoinExchange::run(std::string filename, BitcoinExchange &exchange)
         if (!exchange.checkRate(rate))
             continue;
         double final_rate = atof(rate.c_str());
-
-        std::cout << date << " => " << final_rate << " = " << std::setprecision(2) << final_rate * exchange.getRate(date) << std::endl;
+        double price = exchange.getPrice(date);
+        std::cout << date << " => " << final_rate << " = " << std::fixed << std::setprecision(1) << final_rate * price << std::endl;
     }
     input_file.close();
 }
@@ -118,14 +124,21 @@ void BitcoinExchange::run(std::string filename, BitcoinExchange &exchange)
 bool BitcoinExchange::checkRate(const std::string &rate) const
 {
     if (rate.empty() || (rate.find_first_not_of("0123456789.-") != std::string::npos) || rate.at(0) == '.' || rate.at(rate.length() - 1) == '.')
+    {
         std::cerr << "Error: invalid rate => " << rate << std::endl;
+        return false;
+    }
     else if (rate.at(0) == '-')
+    {
         std::cerr << "Error: not a positive number" << std::endl;
+        return false;
+    }
     else if (rate.length() > 10 || (rate.length() == 10 && rate > "2147483647"))
+    {
         std::cerr << "Error: too large a number" << std::endl;
-    else
-        return true;
-    return false;
+        return false;
+    }
+    return true;
 }
 
 
@@ -154,7 +167,7 @@ bool BitcoinExchange::validDate(std::string &date) const
         if (i == 0)
         {
             year = atoi(read_line.c_str());
-            if (year < 2009 || year > 2022)
+            if (year < 2009)
             {
                 std::cerr << "Error: Year not in the database \"" << year << "\"" << std::endl;
                 return false; 
@@ -183,8 +196,22 @@ bool BitcoinExchange::validDate(std::string &date) const
     return true;
 }
 
-double BitcoinExchange::getRate(std::string &date) const
+double BitcoinExchange::getPrice(std::string &date) const
 {
+    /*std::map<std::string, double>::const_iterator it = _exchange.find(date);
+    if (it != _exchange.end())
+    {
+        std::cout << "1Found " << it->first << " : " << it->second << std::endl;
+        return it->second;
+    }
+    it = _exchange.begin();
+    while (date > it->first)
+    {
+        it++;
+    }
+    it--;
+    std::cout << "Found " << it->first << " : " << std::fixed << std::setprecision(1) << it->second << std::endl;
+    return (it->second);*/
     if (this->_exchange.count(date) > 0)
         return this->_exchange.at(date);
     return (--this->_exchange.lower_bound(date))->second;

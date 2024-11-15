@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 12:00:27 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/09/26 16:59:06 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:50:06 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class BitcoinExchange
         bool checkDate(std::string &date) const;
         bool validDate(std::string &date) const;
         bool checkRate(const std::string &rate) const;
-        double getRate(std::string &date) const;
+        double getPrice(std::string &date) const;
         std::map<std::string, double>::size_type size() const;
         std::map<std::string, double>::const_iterator operator[](std::map<std::string, double>::size_type index) const;
 
