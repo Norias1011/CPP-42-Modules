@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 17:03:31 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/11/15 14:30:42 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:15:45 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ void RPN::calculate()
             else if (this->_expression[i] != ' ')
                 throw std::invalid_argument("Invalid expression");
         }
-        std::cout << this->_stack.top() << std::endl;
+        if (this->_stack.size() != 1)
+            throw std::invalid_argument("Invalid expression");
+        else
+            std::cout << this->_stack.top() << std::endl;
     } catch (std::invalid_argument &e) {
         std::cout << e.what() << std::endl;
     }
