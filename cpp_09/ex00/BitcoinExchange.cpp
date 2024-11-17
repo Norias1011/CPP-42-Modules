@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 12:00:30 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/11/15 15:25:11 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:51:34 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ BitcoinExchange::BitcoinExchange()
         _exchange[date] = atof(price.c_str());
     }
     file.close();
-    /*std::map<std::string, double>::iterator it = _exchange.begin();
-    while (it != _exchange.end())
-    {
-        std::cout << it->first << " : " << it->second << std::endl;
-        it++;
-    }*/
 }
 
 BitcoinExchange::~BitcoinExchange()
@@ -157,61 +151,36 @@ bool BitcoinExchange::checkDate(std::string &date) const
 
 bool BitcoinExchange::validDate(std::string &date) const
 {
-    std::string read_line;
-    std::istringstream line(date);
-    int year, month, day;
-    int i = 0;
+    tm time = {};
 
-    while (std::getline(line, read_line, '-'))
+    char *end = strptime(date.c_str(), "%Y-%m-%d", &time);
+    if (end == NULL || *end != '\0')
     {
-        if (i == 0)
-        {
-            year = atoi(read_line.c_str());
-            if (year < 2009)
-            {
-                std::cerr << "Error: Year not in the database \"" << year << "\"" << std::endl;
-                return false; 
-            }
-        }
-        else if (i == 1)
-        {
-            month = atoi(read_line.c_str());
-            if (month < 1 || month > 12)
-            {
-                std::cerr << "Error: Incorrect month => " << month << std::endl;
-                return false; 
-            }
-        }
-        else if (i == 2)
-        {
-            day = atoi(read_line.c_str());
-            if ((day < 1 || day > 31) || (month == 2 && day > 28) || ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30))
-            {
-                std::cerr << "Error: Incorrect day => " << day << std::endl;
-                return false; 
-            }
-        }
-        i++;
+        std::cerr << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    tm duplicateTime = time;
+    time_t result = mktime(&time);
+    if (result == -1)
+    {
+        std::cerr << "mktime wrong" << std::endl;
+        return false;
+    }
+    if (duplicateTime.tm_year != time.tm_year || duplicateTime.tm_mon != time.tm_mon || duplicateTime.tm_mday != time.tm_mday)
+    {
+        std::cerr << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    if (result < 1230850800)
+    {
+        std::cerr << "Error: bad input => " << date << " (btc start the 2009-01-02)" << std::endl;
+        return false;
     }
     return true;
 }
 
 double BitcoinExchange::getPrice(std::string &date) const
 {
-    /*std::map<std::string, double>::const_iterator it = _exchange.find(date);
-    if (it != _exchange.end())
-    {
-        std::cout << "1Found " << it->first << " : " << it->second << std::endl;
-        return it->second;
-    }
-    it = _exchange.begin();
-    while (date > it->first)
-    {
-        it++;
-    }
-    it--;
-    std::cout << "Found " << it->first << " : " << std::fixed << std::setprecision(1) << it->second << std::endl;
-    return (it->second);*/
     if (this->_exchange.count(date) > 0)
         return this->_exchange.at(date);
     return (--this->_exchange.lower_bound(date))->second;
