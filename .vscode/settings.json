@@ -49,6 +49,7 @@
         "typeinfo": "cpp",
         "fstream": "cpp",
         "*.tpp": "c",
-        "map": "cpp"
+        "map": "cpp",
+        "cstring": "cpp"
     }
 }
